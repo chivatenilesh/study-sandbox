@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="firstvalue" type="integer"/>
+    <aura:attribute name="secondvalue" type="integer"/>
+    <aura:attribute name="addtotal" type="integer"/>
+    <aura:attribute name="subtotal" type="integer"/>
+    <aura:attribute name="multiplytotal" type="integer"/>
+    <aura:attribute name="isadd" type="boolean" default="false"/>
+    <aura:attribute name="issub" type="boolean" default="false"/>
+    <aura:attribute name="ismul" type="boolean" default="false"/>
+    <lightning:card variant="Calculator" title="CALCULATOR" iconName="standard:account" >
+        <lightning:input name="input1" label="Enter first value" value="{!v.firstvalue}" />
+        <lightning:input name="input2" label="Enter second value" value="{!v.secondvalue}" /> 
+        <br/>
+        <lightning:button label="ADD"  onclick="{! c.add }"/>
+        <lightning:button label="SUBSTRACT"  onclick="{! c.substract }"/>
+        <lightning:button label="MULTIPLY"  onclick="{! c.multiply }"/>
+        <br/><br/>
+        <aura:if isTrue="{!v.isadd}">
+        	Addition : {!v.addtotal}<br/>
+        </aura:if>
+        <aura:if isTrue="{!v.issub}">
+       		Subtration : {!v.subtotal}<br/>
+        </aura:if>
+        <aura:if isTrue="{!v.ismul}">
+            Multiplication : {!v.multiplytotal}<br/>
+        </aura:if>        	
+    </lightning:card>
+</aura:component>

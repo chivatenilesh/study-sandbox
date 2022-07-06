@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<lightning:card title="Case Insert Window">
+    	<lightning:recordviewform recordId="{!v.recordId}" objectApiName="Account">
+        	<lightning:outputField fieldName="Name" />
+   		</lightning:recordviewform>
+   			<lightning:recordEditForm aura:id="myinfo"
+                              objectApiName="Case"
+                              onsubmit="{!c.handlesubmit}"
+                              onsuccess="{!c.handlesuccess}">
+    	
+               <lightning:messages /> 
+                <lightning:inputField fieldName="Name" />
+                               <lightning:inputField fieldName="ContactId" />
+                <lightning:inputField fieldName="Origin" />
+                <lightning:inputField fieldName="SuppliedCompany" />
+                <lightning:inputField fieldName="SuppliedEmail" />
+                <lightning:inputField fieldName="SuppliedName" />
+               <br/>
+ 				<lightning:button type='submit' variant="brand" label="Save Case"  />		
+        </lightning:recordEditForm>
+    </lightning:card>
+</aura:component>

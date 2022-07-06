@@ -1,0 +1,23 @@
+<aura:component controller="AccountDataTable" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   
+    <aura:attribute name="Accountlist" type="Account[]" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="searchvalue" type="string"/>
+   
+    <aura:handler name="init" value="{!this}" action="{!c.fetchaccount}" />
+    
+    <lightning:card>
+    <div class="slds-size_1-of-4">
+        <lightning:input name="input3" label="SearchBox" placeholder="type here..." value="{!v.searchvalue}" onchange="{! c.handlefind }"/><br/>
+		<!-- <lightning:button variant="success" label="Search" title="success" onclick="{! c.handlefind }" /> -->
+    </div>
+    
+	<div style="height: 350px">
+        <lightning:datatable
+                    keyField="id"
+                    data="{! v.Accountlist }"
+                    columns="{! v.columns }"
+                    hideCheckboxColumn="true"/>
+	</div>
+    </lightning:card>
+</aura:component>

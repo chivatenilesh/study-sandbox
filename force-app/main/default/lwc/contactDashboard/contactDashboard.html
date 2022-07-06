@@ -1,0 +1,21 @@
+<template>
+
+  <div class="fullwidth ">
+
+    <h2 class="slds-text-heading_large">Account DataTable</h2>
+    <hr/>
+    <div>
+      <lightning-button variant="Brand" label="Load Candidate" title="Successful action" onclick={GetData}
+        class="slds-m-left_x-small"></lightning-button>
+    </div>
+    <hr/>
+    <c-contact-table onprogressvaluechange={hanldeProgressValueChange}></c-contact-table>
+    <hr/>
+
+    <template if:true={data}>
+      <c-contact-tile selected-data={data}></c-contact-tile>
+    </template>
+
+</div>
+
+</template>

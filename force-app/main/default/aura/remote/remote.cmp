@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="FirstValue" type="integer" />
+    <aura:attribute name="SecondValue" type="integer" />
+    <aura:attribute name="AddTotal" type="integer" />
+    <aura:attribute name="SubtractTotal" type="integer" />
+    <aura:attribute name="MultiplicationTotal" type="integer" />
+    <lightning:card>
+    <div class="slds-size_2-of-4">
+    <lightning:input name="input1" label=" Enter FirstValue" placeholder="type here..." value="{!v.FirstValue}"/>
+    <lightning:input name="input2" label=" Enter SecondValue" placeholder="type here..." value="{!v.SecondValue}"/>
+    <br/>
+    <lightning:button label="Add" title="Add action" onclick="{! c.Add }"/>
+    <lightning:button label="Subtract" title="Subtract action" onclick="{! c.Subtract }"/>
+    <lightning:button label="Multiply" title="Multiplication action" onclick="{! c.Multiply }"/>
+    </div>
+        <br/>
+        <!-- {!v.FirstValue} --> Addition = {!v.AddTotal}<br/>
+        						 Subtraction = {!v.SubtractTotal}<br/>
+        						Multiplication = {!v.MultiplicationTotal}
+        <br/><br/>
+        <!-- {!v.SecondValue} -->
+    </lightning:card>
+</aura:component>
