@@ -1,0 +1,25 @@
+<aura:component controller="QuickOpportunityInsert"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    
+    <aura:handler name='init' value="{!this}" action="{!c.handleget}"></aura:handler>
+    
+    <aura:attribute name="Oppodetails" type="Opportunity" default="{'sobjectType':'Opportunity',
+                                                                   		  'AccountName':'',	
+                                                                          'Name' :'',               													  'Name' : '',
+                    													  'Type' : '',
+                  														  'LeadSource' : '',
+                  														  'CloseDate' : '',
+                   														  'StageName' : ''
+                                                                          }"/>
+    <aura:attribute name="SampleId" type="string"/>
+    <p>Name : {!v.SampleId}</p>
+    <lightning:input name="input2" label="Opportunity Name" value="{!v.Oppodetails.Name}" />
+    <lightning:input name="input3" label="Type" value="{!v.Oppodetails.Type}" />
+    <lightning:input name="input4" label="Lead Source" value="{!v.Oppodetails.LeadSource}" />
+    <lightning:input type="date" name="input5" label="Close Date" value="{!v.Oppodetails.CloseDate}" />
+    <lightning:input name="input6" label="Stage" value="{!v.Oppodetails.StageName}" />
+   
+    <br/>
+    <lightning:button variant="brand" label="Save" onclick="{!c.handlesave}" />
+</aura:component>

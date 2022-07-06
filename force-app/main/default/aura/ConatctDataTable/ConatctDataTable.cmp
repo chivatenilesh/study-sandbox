@@ -1,0 +1,25 @@
+<aura:component controller="ContactDataTable" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="ContactDetails" type="Contact[]"/>
+    <aura:attribute name="columns" type="List"/>
+ 	<aura:attribute name="searchvalue" type="string"/>
+   
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>    
+    
+    <lightning:card>
+    <div class="slds-size_1-of-4">
+        <lightning:input name="input3" 
+                         label="SearchBox" placeholder="type here..." 
+                         value="{!v.searchvalue}" onchange="{! c.handlefind }"/>
+        <br/>
+     </div>  
+    
+	<div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.ContactDetails }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>
+	</lightning:card>
+</aura:component>

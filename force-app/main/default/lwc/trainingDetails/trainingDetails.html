@@ -1,0 +1,24 @@
+<template>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Training</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {data.name}
+                </td>
+                <td>
+                    <button onclick={handleClickPlus}>+</button>
+                    <input type="number" onblur={changeHandler} value={Value} />
+                    <button onclick={handleClickMinus}>-</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</template>

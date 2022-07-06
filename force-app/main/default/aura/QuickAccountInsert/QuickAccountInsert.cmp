@@ -1,0 +1,17 @@
+<aura:component controller="QuickAccountInsert" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="Accdetails" type="Account" default="{'sobjectType':'Account',                                                                          
+                    											'Name' : '',
+                    										    'AccountNumber' : '',
+                  												'AccountSource' : '',
+                  												'SLAExpirationDate__c' : '',
+                   												'Phone' : '',                                                     
+                                                                }"/>
+    
+    <lightning:input name="input1" label="Account Name" value="{!v.Accdetails.Name}"/>
+    <lightning:input name="input2" label="Account Number" value="{!v.Accdetails.AccountNumber}" />
+    <lightning:input name="input3" label="Account Source" value="{!v.Accdetails.AccountSource}" />
+    <lightning:input type="date" name="input4" label="SLA Expiration Date" value="{!v.Accdetails.SLAExpirationDate__c}" />
+    <lightning:input name="input5" label="Phone" value="{!v.Accdetails.Phone}" />    
+    <br/>
+    <lightning:button variant="brand" label="Save" onclick="{!c.handlesave}" />
+</aura:component>

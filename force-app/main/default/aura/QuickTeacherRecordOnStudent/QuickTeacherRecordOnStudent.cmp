@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<lightning:card title="Teachers Details">
+        <lightning:recordviewform recordId="{!v.recordId}" 
+                                  objectApiName="Student">                                  
+            <lightning:outputField fieldName="Name" />
+        </lightning:recordviewform>
+			<lightning:recordEditForm aura:id="myinfo" 
+                                      objectApiName="Teacher"
+                                      onsubmit="{!c.handlesubmit}"
+								  	  onsuccess="{!c.handlesuccess}">
+                <!--<lightning:messages />-->
+                <!--<lightning:inputField fieldName="AccountId"/> -->
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="StudentID__c"/> 
+                <lightning:inputField fieldName="Experience_In_Years__c"/> 
+                <lightning:inputField fieldName="Experties_in_Subject__c"/> 
+                <lightning:inputField fieldName="Hightest_Education__c"/> 
+                <lightning:button type='submit' variant="brand" label="Save Teacher" />
+			</lightning:recordEditForm>
+    </lightning:card>
+</aura:component>

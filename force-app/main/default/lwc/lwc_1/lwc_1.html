@@ -1,0 +1,33 @@
+<template>
+
+    <div class="fullwidth">
+
+        <lightning-card>
+            <div class="alignment1">
+                <h2>Account Datatable</h2>
+            </div>
+            <div>
+                <template if:true={accList}>
+                    <lightning-datatable data={accList} columns={columns} key-field="Id"
+                        onrowselection={handleRowAction}>
+                    </lightning-datatable>
+                </template>
+            </div>
+            <template if:true={error}>
+                {error}
+            </template>
+            </br>
+            <template if:false={accList}>
+                <div class="alignment1">
+                    <lightning-button variant="Brand" label="Load Candidate" title="Successful action" onclick={GetData}
+                        class="slds-m-left_x-small"></lightning-button>
+                </div>
+                </br>
+            </template>
+
+            <template if:true={FirstName}>
+                current candidate :{FirstName}{phone}
+            </template>
+        </lightning-card>
+    </div>
+</template>

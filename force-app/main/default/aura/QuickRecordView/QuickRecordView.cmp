@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <lightning:card title="Contact Insert Window">
+    	<lightning:recordviewform recordId="{!v.recordId}" objectApiName="Account">
+       		<lightning:outputField fieldName="Name" />
+    	</lightning:recordviewform>
+    		<lightning:recordEditForm aura:id="myinfo"
+                                 objectApiName="Contact"
+                                 onsubmit= "{!c.handlesubmit}"
+                                 onsuccess= "{!c.handlesuccess}">
+				<lightning:messages />
+                <lightning:inputField fieldName="Salutation" />
+                <lightning:inputField fieldName="FirstName" />
+                <lightning:inputField fieldName="LastName" />
+                <lightning:inputField fieldName="AccountId" />
+                <lightning:inputField fieldName="Phone" />
+                <lightning:inputField FieldName="Email" />
+                <!-- <lightning:button label="Cancel"  onclick="{! c.handleCancel }"/> --> 
+                <lightning:button type= "submit" variant="brand" label="Save Contact" />
+     		</lightning:recordEditForm>
+   </lightning:card>
+</aura:component>

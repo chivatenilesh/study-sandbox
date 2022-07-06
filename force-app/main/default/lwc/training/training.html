@@ -1,0 +1,7 @@
+<template>
+    <template for:each={trainings} for:item="training">
+        <c-training-details id={training.id} data={training} key={training.id}></c-training-details>
+    </template>
+
+<lightning-button variant="Brand" label="Reset" title="Successful action" onclick={ResetData} class="slds-m-left_x-small"></lightning-button>
+</template>
